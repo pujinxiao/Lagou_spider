@@ -10,8 +10,8 @@ class LagouSpider(CrawlSpider):
     start_urls = ['https://www.lagou.com/']
 
     rules = (
-        #Rule(LinkExtractor(allow=r'www.lagou.com/zhaopin.*?')),
-        Rule(LinkExtractor(allow=r'www.lagou.com/jobs/\d+.html'), callback='parse_item', follow=False),
+        Rule(LinkExtractor(allow=r'www.lagou.com/zhaopin.*?')),
+        Rule(LinkExtractor(allow=r'www.lagou.com/jobs/\d+.html'), callback='parse_item', follow=True),
     )
 
     def parse_item(self, response):
